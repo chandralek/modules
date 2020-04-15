@@ -5,4 +5,15 @@ resource "aws_instance" "robo" {
   vpc_security_group_ids = [aws_security_group.allow_ssh_vpc.id]
 }
 
-
+resource "null_resource" "apply" {
+  provisioner "remote-exec" {
+    connection {
+      host      = aws_instance.robo.private_ip
+      user      = "root"
+      password  = "Devops321"
+    }
+    inline = [
+    "yum install nginx -y",
+    "systemctl start ngnix"]
+  }
+}
