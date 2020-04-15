@@ -5,8 +5,8 @@ resource "aws_security_group" "allow_ssh_vpc" {
 
   ingress {
     description = "TLS from VPC"
-    from_port   = 443
-    to_port     = 443
+    from_port   = 22
+    to_port     = 22
     protocol    = "tcp"
     cidr_blocks = [data.aws_vpc.main.cidr_block,data.aws_vpc.management.cidr_block]
   }
