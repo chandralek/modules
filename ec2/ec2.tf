@@ -11,6 +11,7 @@ resource "null_resource" "apply" {
       host = aws_instance.robo.private_ip
       user = "root"
       password = "DevOps321"
+      timeout = "5m"
     }
 
     inline = [
