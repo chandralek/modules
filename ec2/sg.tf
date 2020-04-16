@@ -22,7 +22,7 @@ resource "aws_security_group" "allow_ssh_vpc" {
   }
 }
 
-resource "aws_security_group" "allow_ssh_vpc" {
+resource "aws_security_group" "allow_http_vpc" {
   name        = "allow_http"
   description = "Allow SSH Access"
   vpc_id      = var.VPC_ID
