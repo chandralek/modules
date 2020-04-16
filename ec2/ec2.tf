@@ -10,7 +10,7 @@ resource "null_resource" "apply" {
     connection {
       host      = aws_instance.robo.private_ip
       user      = "root"
-      password  = "Devops321"
+      password  = "DevOps321"
     }
     inline = [
     "yum install nginx -y",
