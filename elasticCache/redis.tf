@@ -1,9 +1,11 @@
-resource "aws_elasticache_cluster" "example" {
-  cluster_id           = "cluster-example"
+resource "aws_elasticache_cluster" "redis-cluster" {
+  cluster_id           = "redis-cluster-${lower(var.TAGS["ENV"])}"
   engine               = "redis"
-  node_type            = "cache.m4.large"
-  num_cache_nodes      = 1
-  parameter_group_name = "default.redis3.2"
+  node_type            = var.NODE_TYPE
+  num_cache_nodes      = var.NUMBER_OF_NODES
+  parameter_group_name = aws_elasticache_parameter_group.redis-5-0-6-pg.name
   engine_version       = "3.2.10"
   port                 = 6379
+  subnet_group_name    = aws_elasticache_subnet_group.redis-subnet-group.name
+  security_group_ids   = [aws_security_group.allow_redis_access.id]
 }
