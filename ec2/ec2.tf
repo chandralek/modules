@@ -1,22 +1,9 @@
-resource "aws_instance" "robo" {
-  ami                     = "ami-0777ff5c030fe1d38"
-  instance_type           = "t3.medium"
+resource "aws_instance" "ec2-instance" {
+  ami                     = data.aws_ami.centos.id
+  instance_type           = var.INSTANCE_TYPE
   subnet_id               = element(var.PRIVATE_SUBNETS, 0)
-  vpc_security_group_ids  = [aws_security_group.allow_ssh_vpc.id,aws_security_group.allow_http_vpc.id]
-}
-
-resource "null_resource" "apply" {
-  provisioner "remote-exec" {
-    connection {
-      host = aws_instance.robo.private_ip
-      user = "root"
-      password = "DevOps321"
-      timeout = "5m"
-    }
-
-    inline = [
-      "yum install nginx -y ",
-      "systemctl start nginx"
-    ]
+  vpc_security_group_ids  = [var.SG]
+  tags                    = {
+    Name                  = var.NAME_TAG
   }
 }

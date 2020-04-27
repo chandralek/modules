@@ -1,3 +1,3 @@
-output "PUBLIC_IP" {
-  value = aws_instance.robo.public_ip
+output "PRIVATE_IP" {
+  value = aws_instance.ec2-instance.private_ip
 }
