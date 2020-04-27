@@ -9,3 +9,15 @@ module "ec2" {
   SG              = aws_security_group.allow_mongodb_access.id
   NAME_TAG        = "mongodb-${var.TAGS["ENV"]}-instance"
 }
+
+resource "null_resource" "mongodb_instance_ssh" {
+  connection {
+    host = module.ec2.PRIVATE_IP
+    user = "root"
+    password = "DevOps321"
+  }
+  provisioner "remote-exec" {
+    inline = [
+    "echo Hello"]
+  }
+}
