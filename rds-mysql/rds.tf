@@ -1,6 +1,6 @@
 resource "aws_db_instance" "mysql-instance" {
   count                = var.NONPROD ? 1 : 0
-  identifier           = "${var.TAGS["PROJECTSHOP"]}-${var.TAGS["ENV"]}"
+  identifier           = "${var.TAGS["PROJECT"]}-${var.TAGS["ENV"]}"
   allocated_storage    = 20
   storage_type         = "gp2"
   engine               = "mysql"
