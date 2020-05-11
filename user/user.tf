@@ -14,8 +14,8 @@ resource "null_resource" "Install User service" {
   provisioner "remote-exec" {
     connection {
       host = module.ec2.PRIVATE_IP
-      user = "root"
-      password = "DevOps321"
+      user = var.SSH_USR
+      password = var.SSH_PSW
     }
     inline = [
     "yum install ansible -y",
