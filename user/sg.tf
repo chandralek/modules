@@ -1,6 +1,6 @@
 resource "aws_security_group" "sg-user" {
-  name        = "allow_mysql_access"
-  description = "Allow mysql Access"
+  name        = "allow_user-service"
+  description = "allow_user-service"
   vpc_id      = var.VPC_ID
 
   ingress {
