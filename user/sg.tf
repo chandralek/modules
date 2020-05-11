@@ -4,8 +4,8 @@ resource "aws_security_group" "sg-user" {
   vpc_id      = var.VPC_ID
 
   ingress {
-    from_port   = var.APPLICATION_PORT
-    to_port     = var.APPLICATION_PORT
+    from_port   = 7007
+    to_port     = 7007
     protocol    = "tcp"
     cidr_blocks = [data.aws_vpc.main.cidr_block,data.aws_vpc.management-vpc.cidr_block]
   }
