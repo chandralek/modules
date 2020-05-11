@@ -10,7 +10,7 @@ module "ec2" {
   NAME_TAG        = "user-${var.TAGS["PROJECT"]}-${var.TAGS["ENV"]}"
 }
 
-resource "null_resource" "Install User service" {
+resource "null_resource" "Install_User_service" {
   provisioner "remote-exec" {
     connection {
       host = module.ec2.PRIVATE_IP
