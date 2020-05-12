@@ -8,3 +8,5 @@ variable "GIT_USR" {}
 variable "GIT_PSW" {}
 variable "SSH_USR" {}
 variable "SSH_PSW" {}
+variable "APPLICATION_NAME" {}
+variable "PORTS" {}

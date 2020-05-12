@@ -6,8 +6,8 @@ module "ec2" {
   PUBLIC_SUBNETS  = var.PUBLIC_SUBNETS
   TAGS            = var.TAGS
   INSTANCE_TYPE   = var.INSTANCE_TYPE
-  SG              = aws_security_group.sg-user.id
-  NAME_TAG        = "user-${var.TAGS["PROJECT"]}-${var.TAGS["ENV"]}"
+  SG              = aws_security_group.security-group.id
+  NAME_TAG        = "${var.APPLICATION_NAME}-${var.TAGS["PROJECT"]}-${var.TAGS["ENV"]}"
 }
 
 resource "null_resource" "Install_User_service" {

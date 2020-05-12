@@ -1,11 +1,11 @@
-resource "aws_security_group" "sg-user" {
-  name        = "allow_user-service"
-  description = "allow_user-service"
+resource "aws_security_group" "security-group" {
+  name        = local.sg_name
+  description = "allow ${var.APPLICATION_NAME} service"
   vpc_id      = var.VPC_ID
 
   ingress {
-    from_port   = 7007
-    to_port     = 7007
+    from_port   = var.PORTS["var.APPLICATION_NAME"]
+    to_port     = var.PORTS["var.APPLICATION_NAME"]
     protocol    = "tcp"
     cidr_blocks = [data.aws_vpc.main.cidr_block,data.aws_vpc.management-vpc.cidr_block]
   }
@@ -26,6 +26,6 @@ resource "aws_security_group" "sg-user" {
 
 
   tags = {
-    Name = "allow_user"
+    Name = "allow_${var.APPLICATION_NAME}"
   }
 }
