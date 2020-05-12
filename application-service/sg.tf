@@ -5,7 +5,7 @@ resource "aws_security_group" "security-group" {
 
   ingress {
     from_port   = var.PORTS["${var.APPLICATION_NAME}"]
-    to_port     = var.PORTS["var.APPLICATION_NAME"]
+    to_port     = var.PORTS[var.APPLICATION_NAME]
     protocol    = "tcp"
     cidr_blocks = [data.aws_vpc.main.cidr_block,data.aws_vpc.management-vpc.cidr_block]
   }
