@@ -1,3 +1,3 @@
 locals {
-  sg_name = "sg_${var.APPLICATION_NAME}"
+  sg_name = "securityGroup_${var.APPLICATION_NAME}"
 }
