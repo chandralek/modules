@@ -20,7 +20,7 @@ resource "null_resource" "Install_service" {
     inline = [
       "yum install ansible -y ",
       "echo localhost >/tmp/hosts",
-      "ansible-pull -i /tmp/hosts -U https://${var.GIT_USR}:${var.GIT_PSW}@github.com/chandralek/roboshop-project.git setup.yaml -t ${var.APPLICATION_NAME}"
+      "ansible-pull -i /tmp/hosts -U https://${var.GIT_USR}:${var.GIT_PSW}@github.com/chandralek/roboshop-project.git setup.yml -t ${var.APPLICATION_NAME}"
     ]
   }
 }
