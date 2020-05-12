@@ -1,4 +1,4 @@
-resource "aws_security_group" "security-group" {
+resource "aws_security_group" "security_group" {
   name        = local.sg_name
   description = "allow ${var.APPLICATION_NAME} service"
   vpc_id      = var.VPC_ID

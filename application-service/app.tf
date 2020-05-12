@@ -6,7 +6,7 @@ module "ec2" {
   PUBLIC_SUBNETS  = var.PUBLIC_SUBNETS
   TAGS            = var.TAGS
   INSTANCE_TYPE   = var.INSTANCE_TYPE
-  SG              = aws_security_group.security-group.id
+  SG              = aws_security_group.security_group.id
   NAME_TAG        = "${var.APPLICATION_NAME}-${var.TAGS["PROJECT"]}-${var.TAGS["ENV"]}"
 }
 
