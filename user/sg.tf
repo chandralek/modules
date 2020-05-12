@@ -17,6 +17,14 @@ resource "aws_security_group" "sg-user" {
     cidr_blocks = [data.aws_vpc.main.cidr_block,data.aws_vpc.management-vpc.cidr_block]
   }
 
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+
   tags = {
     Name = "allow_user"
   }
