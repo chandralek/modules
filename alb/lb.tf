@@ -2,7 +2,7 @@ resource "aws_lb" "frontend_alb" {
   name               = local.alb_name
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [var.SG]
+  security_groups    = [aws_security_group.security_group.id]
   subnets            = [var.PUBLIC_SUBNETS]
   tags = {
     Name = local.alb_name
