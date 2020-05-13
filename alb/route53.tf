@@ -1,6 +1,6 @@
 resource "aws_route53_record" "www" {
-  zone_id = "${aws_route53_zone.primary.zone_id}"
-  name    = "www.example.com"
+  zone_id = "Z06359783V969HYMH8KRR"
+  name    = local.route_name
   type    = "CNAME"
   ttl     = "5"
   records = [aws_lb.frontend_alb.dns_name]
