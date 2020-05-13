@@ -13,8 +13,8 @@ module "ec2" {
 resource "null_resource" "mongodb_instance_ssh" {
   connection {
     host = module.ec2.PRIVATE_IP
-    user = "root"
-    password = "DevOps321"
+    user = var.SSH_USR
+    password = var.SSH_PSW
   }
   provisioner "remote-exec" {
     inline = [

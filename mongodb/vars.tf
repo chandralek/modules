@@ -4,3 +4,7 @@ variable "PRIVATE_SUBNETS" {}
 variable "PUBLIC_SUBNETS" {}
 variable "MGMT_VPC_ID" {}
 variable "VPC_ID" {}
+variable "GIT_USR"          {}
+variable "GIT_PSW"          {}
+variable "SSH_USR"          {}
+variable "SSH_PSW"          {}
