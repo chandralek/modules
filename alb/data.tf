@@ -8,7 +8,7 @@ data "aws_vpc" "management-vpc"{
 
 data "aws_instances" "frontend-instances" {
   instance_tags = {
-    Name = "frontend-roboshop=nonprod"
+    Name = "frontend-roboshop-nonprod"
   }
   instance_state_names = ["running"]
 }
