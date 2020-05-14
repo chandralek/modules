@@ -8,3 +8,5 @@ variable "GIT_USR"          {}
 variable "GIT_PSW"          {}
 variable "SSH_USR"          {}
 variable "SSH_PSW"          {}
+variable "HOSTED_ZONE_ID" {}
+variable "HOSTED_ZONE_NAME" {}

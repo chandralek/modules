@@ -7,7 +7,7 @@ module "ec2" {
   TAGS            = var.TAGS
   INSTANCE_TYPE   = var.INSTANCE_TYPE
   SG              = aws_security_group.allow_mongodb_access.id
-  NAME_TAG        = "mongodb-${var.TAGS["ENV"]}-instance"
+  NAME_TAG        = local.NAME_TAG
 }
 
 resource "null_resource" "mongodb_instance_ssh" {

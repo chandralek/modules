@@ -14,7 +14,7 @@ resource "aws_security_group" "allow_mongodb_access" {
     from_port   = 27017
     to_port     = 27017
     protocol    = "tcp"
-    cidr_blocks = [data.aws_vpc.main.cidr_block,data.aws_vpc.management.cidr_block]
+    cidr_blocks = [data.aws_vpc.main.cidr_block]
   }
 
   egress {
