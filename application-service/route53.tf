@@ -7,5 +7,5 @@ resource "aws_route53_record" "routerecord" {
 }
 
 locals{
-  DNS_NAME = "${var.APPLICATION_NAME}-${var.TAGS["env"]}.${var.HOSTED_ZONE_NAME}"
+  DNS_NAME = "${var.APPLICATION_NAME}-${var.TAGS["ENV"]}.${var.HOSTED_ZONE_NAME}"
 }
