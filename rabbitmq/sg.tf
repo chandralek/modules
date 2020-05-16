@@ -1,6 +1,6 @@
-resource "aws_security_group" "allow_mongodb_access" {
-  name        = "allow_mongodb_access"
-  description = "Allow mongodb Access"
+resource "aws_security_group" "allow_rabbitmq_access" {
+  name        = "allow_rabbitmq_access"
+  description = "Allow rabbitmq Access"
   vpc_id      = var.VPC_ID
 
   ingress {
@@ -25,6 +25,6 @@ resource "aws_security_group" "allow_mongodb_access" {
   }
 
   tags = {
-    Name = "allow_mongodb_access"
+    Name = "allow_rabbitmq_access"
   }
 }
