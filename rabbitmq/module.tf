@@ -6,7 +6,7 @@ module "ec2" {
   PUBLIC_SUBNETS  = var.PUBLIC_SUBNETS
   TAGS            = var.TAGS
   INSTANCE_TYPE   = var.INSTANCE_TYPE
-  SG              = aws_security_group.allow_mongodb_access.id
+  SG              = aws_security_group.allow_rabbitmq_access.id
   NAME_TAG        = local.NAME_TAG
 }
 
