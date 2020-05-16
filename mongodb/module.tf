@@ -11,7 +11,7 @@ module "ec2" {
 }
 
 resource "null_resource" "mongodb_instance_ssh" {
-  triggers {
+  triggers = {
     trigger = timestamp()
   }
   connection {
