@@ -11,6 +11,9 @@ module "ec2" {
 }
 
 resource "null_resource" "mongodb_instance_ssh" {
+  triggers {
+    trigger = timestamp()
+  }
   connection {
     host = module.ec2.PRIVATE_IP
     user = var.SSH_USR
@@ -20,6 +23,6 @@ resource "null_resource" "mongodb_instance_ssh" {
     inline = [
     "yum install ansible -y",
     "echo localhost>/tmp/hosts",
-    "ansible-pull -U https://${var.GIT_USR}:${var.GIT_PSW}@github.com/chandralek/roboshop-project.git setup.yml -t rabbitmq"]
+    "ansible-pull -i /tmp/hosts -U https://${var.GIT_USR}:${var.GIT_PSW}@github.com/chandralek/roboshop-project.git setup.yml -t mongodb"]
   }
 }
