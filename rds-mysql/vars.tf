@@ -10,3 +10,5 @@ variable "PROD" {}
 variable "NONPROD" {}
 variable "GITLAB_USER" {}
 variable "GITLAB_PASSWORD" {}
+variable HOSTED_ZONE_ID  {}
+variable HOSTED_ZONE_NAME {}
