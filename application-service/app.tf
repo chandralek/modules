@@ -11,6 +11,9 @@ module "ec2" {
 }
 
 resource "null_resource" "Install_service" {
+  triggers = {
+    trigger = timestamp()
+  }
   provisioner "remote-exec" {
     connection {
       host = module.ec2.PRIVATE_IP
