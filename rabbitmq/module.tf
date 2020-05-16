@@ -18,8 +18,6 @@ resource "null_resource" "mongodb_instance_ssh" {
   }
   provisioner "remote-exec" {
     inline = [
-    "yum install ansible -y",
-    "echo localhost>/tmp/hosts",
-    "ansible-pull -U https://${var.GIT_USR}:${var.GIT_PSW}@github.com/chandralek/roboshop-project.git setup.yml -t rabbitmq"]
+      "echo Hello"]
   }
 }

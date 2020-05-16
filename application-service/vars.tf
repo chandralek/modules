@@ -10,3 +10,5 @@ variable "SSH_USR" {}
 variable "SSH_PSW" {}
 variable "APPLICATION_NAME" {}
 variable "PORTS" {}
+variable "HOSTED_ZONE_ID" {}
+variable "HOSTED_ZONE_NAME" {}
