@@ -1,4 +1,4 @@
-resource "aws_route53_record" "mongo" {
+resource "aws_route53_record" "rabbitmq" {
   zone_id = var.HOSTED_ZONE_ID
   name    = local.DNS_NAME
   type    = "A"
