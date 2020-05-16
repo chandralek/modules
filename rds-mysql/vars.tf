@@ -8,7 +8,7 @@ variable "TAGS" {}
 variable "INSTANCE_TYPE" {}
 variable "PROD" {}
 variable "NONPROD" {}
-variable "GITLAB_USER" {}
-variable "GITLAB_PASSWORD" {}
+variable "GIT_USR" {}
+variable "GIT_PSW" {}
 variable HOSTED_ZONE_ID  {}
 variable HOSTED_ZONE_NAME {}
