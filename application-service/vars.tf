@@ -12,3 +12,5 @@ variable "APPLICATION_NAME" {}
 variable "PORTS" {}
 variable "HOSTED_ZONE_ID" {}
 variable "HOSTED_ZONE_NAME" {}
+variable "R_USR" {}
+variable "R_PSW" {}
