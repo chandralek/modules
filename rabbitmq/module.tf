@@ -23,6 +23,6 @@ resource "null_resource" "rabbitmq_instance_ssh" {
     inline = [
       "yum install ansible -y",
       "echo localhost>/tmp/hosts",
-      "ansible-pull -i /tmp/hosts -U https://${var.GIT_USR}:${var.GIT_PSW}@github.com/chandralek/roboshop-project.git setup.yml -t rabbitmq -e RUSERNAME=${var.R_USR} -e RUSERNAME=${var.R_USR}"]
+      "ansible-pull -i /tmp/hosts -U https://${var.GIT_USR}:${var.GIT_PSW}@github.com/chandralek/roboshop-project.git setup.yml -t rabbitmq -e RUSERNAME=${var.R_USR} -e RPASSWORD=${var.R_PSW}"]
   }
 }
