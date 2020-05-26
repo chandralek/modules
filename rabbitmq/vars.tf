@@ -10,3 +10,5 @@ variable "SSH_USR"          {}
 variable "SSH_PSW"          {}
 variable "HOSTED_ZONE_ID" {}
 variable "HOSTED_ZONE_NAME" {}
+variable "R_USR" {}
+variable "R_PSW" {}
